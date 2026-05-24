@@ -3,480 +3,1246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="গ্যাসটো কিলার লিভার টনিক - প্রাকৃতিক ভেষজ উপাদানে তৈরি লিভার টনিক পাউডার। গ্যাস, বদহজম, বুক জ্বালা থেকে মুক্তি পান।">
-    <meta name="keywords" content="লিভার টনিক, গ্যাস্ট্রিক, হার্বাল মেডিসিন, বাংলাদেশ">
-    <title>গ্যাসটো কিলার লিভার টনিক | প্রাকৃতিক ভেষজ সমাধান</title>
+    <meta name="description" content="প্রিমিয়াম আয়ুর্বেদিক হেলথ টনিক - প্রাকৃতিক ভেষজ উপাদানে তৈরি। শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়ান, শক্তি ও প্রাণশক্তি ফিরে পান।">
+    <meta name="keywords" content="আয়ুর্বেদিক টনিক, হার্বাল মেডিসিন, ভেষজ ওষুধ, বাংলাদেশ, স্বাস্থ্য টনিক">
+    <title>ভিটাহার্ব প্লাস | প্রিমিয়াম আয়ুর্বেদিক হেলথ টনিক</title>
+    <!-- Google Font: Hind Siliguri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#f011d9',
+                            light: '#f655e3',
+                            dark: '#c00dae',
+                            50: '#fdf2fc',
+                            100: '#fce7fa',
+                            200: '#f9cef5',
+                            300: '#f5a6ed',
+                            400: '#f011d9',
+                            500: '#e005c4',
+                            600: '#c00dae',
+                            700: '#9c0f8a',
+                            800: '#7d1170',
+                            900: '#67145c',
+                        }
+                    },
+                    fontFamily: {
+                        'bangla': ['Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ===== Custom Styles ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Hind Siliguri', sans-serif; overflow-x: hidden; }
+
+        /* Glassmorphism */
+        .glass { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+        .glass-dark { background: rgba(0,0,0,0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+
+        /* Animations */
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+        @keyframes pulse-glow { 0%{box-shadow:0 0 0 0 rgba(240,17,217,0.5)} 70%{box-shadow:0 0 0 20px rgba(240,17,217,0)} 100%{box-shadow:0 0 0 0 rgba(240,17,217,0)} }
+        @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+        @keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        @keyframes scaleIn { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
+        @keyframes bounceIn { 0%{opacity:0;transform:scale(0.3)} 50%{opacity:1;transform:scale(1.05)} 70%{transform:scale(0.9)} 100%{transform:scale(1)} }
+        @keyframes slideInRight { from{opacity:0;transform:translateX(50px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes wiggle { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(3deg)} 75%{transform:rotate(-3deg)} }
+
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 2s infinite; }
+        .animate-shimmer { background: linear-gradient(90deg, #f011d9, #ff6ef9, #f011d9); background-size: 200% auto; animation: shimmer 3s linear infinite; }
+        .animate-wiggle { animation: wiggle 2s ease-in-out infinite; }
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* CTA Button Styles */
+        .cta-btn { position: relative; overflow: hidden; transition: all 0.3s ease; }
+        .cta-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition:0.5s; }
+        .cta-btn:hover::before { left:100%; }
+        .cta-btn:hover { transform:translateY(-3px); box-shadow:0 10px 40px rgba(240,17,217,0.4); }
+
+        /* Testimonial Slider */
+        .slider-container { overflow: hidden; position: relative; }
+        .slider-track { display: flex; transition: transform 0.5s ease; }
+        .slider-slide { min-width: 100%; padding: 0 10px; }
+        @media(min-width:768px) { .slider-slide { min-width: 50%; } }
+        @media(min-width:1024px) { .slider-slide { min-width: 33.333%; } }
+
+        /* FAQ Accordion */
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+        .faq-item.active .faq-content { max-height: 300px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        /* Modal */
+        .modal-overlay { opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content { transform: scale(0.8) translateY(20px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+
+        /* Quantity Selector */
+        .qty-btn { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(135deg,#f011d9,#c00dae); color:#fff; font-size:1.2rem; cursor:pointer; transition:all 0.2s; border:none; }
+        .qty-btn:hover { transform:scale(1.1); }
+        .qty-input { width:50px; text-align:center; font-size:1.1rem; font-weight:700; border:none; background:transparent; font-family:'Hind Siliguri',sans-serif; }
+
+        /* Stock Alert */
+        .stock-pulse { animation: pulse-glow 1.5s infinite; }
+
+        /* WhatsApp Float */
+        .whatsapp-float { position:fixed; bottom:90px; right:20px; z-index:999; width:60px; height:60px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.8rem; box-shadow:0 4px 20px rgba(37,211,102,0.5); transition:all 0.3s; }
+        .whatsapp-float:hover { transform:scale(1.1); box-shadow:0 6px 30px rgba(37,211,102,0.6); }
+
+        /* Sticky Mobile CTA */
+        .sticky-mobile { position:fixed; bottom:0; left:0; right:0; z-index:998; padding:10px 15px; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); box-shadow:0 -4px 20px rgba(0,0,0,0.1); display:none; }
+        @media(max-width:768px) { .sticky-mobile { display:block; } }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#f1f1f1; }
+        ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,#f011d9,#c00dae); border-radius:10px; }
+
+        /* Before After section */
+        .before-after-card { position:relative; overflow:hidden; border-radius:16px; }
+        .before-after-card img { width:100%; height:200px; object-fit:cover; }
+
+        /* Gradient text */
+        .gradient-text { background:linear-gradient(135deg,#f011d9,#ff6ef9,#c00dae); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    </style>
 </head>
-<body>
+<body class="font-bangla bg-gray-50 text-gray-800">
 
-
-    <!-- ========== TOP BAR ========== -->
-    <div class="top-bar">
-        <div class="container">
-            <p><i class="fas fa-truck"></i> সারা বাংলাদেশে ক্যাশ অন ডেলিভারি</p>
-        </div>
+    <!-- ========== TOP ANNOUNCEMENT BAR ========== -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand to-brand-700 text-white text-center py-2 px-4 text-sm font-medium">
+        <p><i class="fas fa-fire mr-1"></i> সীমিত সময়ের অফার! <span class="font-bold">৪০% ছাড়</span> + ফ্রি ডেলিভারি <i class="fas fa-truck ml-1"></i></p>
     </div>
 
-    <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-leaf"></i>
-                <span>গ্যাসটো কিলার</span>
-            </div>
-            <a href="#order" class="header-cta">অর্ডার করুন</a>
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand to-brand-700 flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold text-gray-800">ভিটা<span class="text-brand">হার্ব</span> প্লাস</span>
+            </a>
+            <button onclick="openOrderModal()" class="cta-btn bg-gradient-to-r from-brand to-brand-700 text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg shadow-brand/30 hover:shadow-brand/50">
+                <i class="fas fa-shopping-cart mr-1"></i> অর্ডার করুন
+            </button>
         </div>
     </header>
 
-
     <!-- ========== HERO SECTION ========== -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="offer-badge">
-                        <i class="fas fa-fire"></i> বিশেষ অফার চলছে!
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-50 via-white to-purple-50 py-16 md:py-24" id="home">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- Hero Text -->
+                <div class="text-center md:text-left order-2 md:order-1">
+                    <div class="inline-block bg-brand/10 text-brand-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-4 animate-pulse">
+                        <i class="fas fa-star mr-1"></i> #১ বেস্ট সেলিং আয়ুর্বেদিক টনিক
                     </div>
-                    <h1>গ্যাসটো কিলার<br><span>লিভার টনিক</span></h1>
-                    <p class="hero-subtitle">প্রাকৃতিক ভেষজ উপাদানে তৈরি — গ্যাস, বদহজম ও লিভারের সমস্যা থেকে মুক্তি পান স্থায়ীভাবে!</p>
-                    <div class="price-box">
-                        <span class="old-price">৳ ১২০০</span>
-                        <span class="new-price">৳ ৮৫০</span>
-                        <span class="discount-tag">২৯% ছাড়</span>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                        প্রাকৃতিক শক্তিতে<br>
+                        <span class="gradient-text">সুস্থ জীবনযাপন</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        ১০০% খাঁটি আয়ুর্বেদিক ভেষজ উপাদানে তৈরি প্রিমিয়াম হেলথ টনিক। শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়ান, শক্তি ও প্রাণশক্তি ফিরে পান।
+                    </p>
+                    <div class="flex items-center gap-4 mb-6 justify-center md:justify-start flex-wrap">
+                        <span class="text-gray-400 line-through text-xl">৳১৫০০</span>
+                        <span class="text-3xl font-bold text-brand">৳৮৯৯</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">৪০% ছাড়</span>
                     </div>
-                    <a href="#order" class="btn-primary pulse-btn">
-                        <i class="fas fa-shopping-cart"></i> অর্ডার করতে ক্লিক করুন
-                    </a>
-                    <div class="trust-mini">
-                        <span><i class="fas fa-check-circle"></i> ১০০% অরিজিনাল</span>
-                        <span><i class="fas fa-shipping-fast"></i> দ্রুত ডেলিভারি</span>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                        <button onclick="openOrderModal()" class="cta-btn animate-pulse-glow bg-gradient-to-r from-brand to-brand-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-brand/30">
+                            <i class="fas fa-shopping-bag mr-2"></i> এখনই অর্ডার করুন
+                        </button>
+                        <a href="#benefits" class="flex items-center justify-center gap-2 text-brand-700 font-semibold hover:text-brand transition">
+                            <i class="fas fa-play-circle text-2xl"></i> বিস্তারিত দেখুন
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-6 mt-6 justify-center md:justify-start text-sm text-gray-500">
+                        <span><i class="fas fa-check-circle text-green-500 mr-1"></i> ১০০% অরিজিনাল</span>
+                        <span><i class="fas fa-shipping-fast text-brand mr-1"></i> দ্রুত ডেলিভারি</span>
+                        <span><i class="fas fa-shield-alt text-blue-500 mr-1"></i> নিরাপদ</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/images/product.png" alt="গ্যাসটো কিলার লিভার টনিক" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== COUNTDOWN TIMER ========== -->
-    <section class="countdown-section">
-        <div class="container">
-            <h3><i class="fas fa-clock"></i> অফার শেষ হচ্ছে</h3>
-            <div class="countdown-timer" id="countdown">
-                <div class="time-box"><span id="hours">00</span><small>ঘণ্টা</small></div>
-                <div class="time-box"><span id="minutes">00</span><small>মিনিট</small></div>
-                <div class="time-box"><span id="seconds">00</span><small>সেকেন্ড</small></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PROBLEM SECTION ========== -->
-    <section class="problems-section" id="problems">
-        <div class="container">
-            <div class="section-header">
-                <h2>আপনি কি এই সমস্যায় ভুগছেন?</h2>
-                <p>নিচের যেকোনো সমস্যা থাকলে গ্যাসটো কিলার আপনার জন্য</p>
-            </div>
-            <div class="problems-grid">
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="problem-icon"><i class="fas fa-wind"></i></div>
-                    <h4>গ্যাস</h4>
-                    <p>পেটে অতিরিক্ত গ্যাস জমে থাকা</p>
-                </div>
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="problem-icon"><i class="fas fa-stomach"></i></div>
-                    <h4>বদহজম</h4>
-                    <p>খাবার সঠিকভাবে হজম না হওয়া</p>
-                </div>
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="problem-icon"><i class="fas fa-fire-flame-curved"></i></div>
-                    <h4>বুক জ্বালা</h4>
-                    <p>অ্যাসিডিটির কারণে বুকে জ্বালাপোড়া</p>
-                </div>
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="problem-icon"><i class="fas fa-disease"></i></div>
-                    <h4>লিভারের দুর্বলতা</h4>
-                    <p>লিভারের কার্যক্ষমতা কমে যাওয়া</p>
-                </div>
-                <div class="problem-card" data-aos="fade-up">
-                    <div class="problem-icon"><i class="fas fa-utensils"></i></div>
-                    <h4>ক্ষুধামন্দা</h4>
-                    <p>খাবারে রুচি না থাকা</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== BENEFITS SECTION ========== -->
-    <section class="benefits-section" id="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>গ্যাসটো কিলার এর উপকারিতা</h2>
-                <p>প্রাকৃতিক ভেষজ উপাদানে তৈরি — কোনো পার্শ্বপ্রতিক্রিয়া নেই</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-fire"></i></div>
-                    <h4>হজম শক্তি বৃদ্ধি</h4>
-                    <p>খাবার দ্রুত ও সঠিকভাবে হজম করতে সাহায্য করে</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-wind"></i></div>
-                    <h4>গ্যাস কমাতে সহায়ক</h4>
-                    <p>পেটে গ্যাস জমা হওয়া প্রতিরোধ করে</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-shield-heart"></i></div>
-                    <h4>লিভার পরিষ্কার রাখে</h4>
-                    <p>লিভারের টক্সিন দূর করে সুস্থ রাখে</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
-                    <h4>শরীর সতেজ রাখে</h4>
-                    <p>শরীরে এনার্জি ও স্ফূর্তি বাড়ায়</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
-                    <h4>প্রাকৃতিক উপাদান</h4>
-                    <p>১০০% ভেষজ ও প্রাকৃতিক উপাদানে তৈরি</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-heart-pulse"></i></div>
-                    <h4>পার্শ্বপ্রতিক্রিয়া মুক্ত</h4>
-                    <p>দীর্ঘদিন ব্যবহারেও কোনো ক্ষতি নেই</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== INGREDIENTS SECTION ========== -->
-    <section class="ingredients-section" id="ingredients">
-        <div class="container">
-            <div class="section-header">
-                <h2>প্রাকৃতিক উপাদানসমূহ</h2>
-                <p>সম্পূর্ণ হালাল ও নিরাপদ ভেষজ উপাদান</p>
-            </div>
-            <div class="ingredients-grid">
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🌿</div>
-                    <h4>আমলকী</h4>
-                    <p>ভিটামিন সি সমৃদ্ধ, হজম শক্তি বাড়ায়</p>
-                </div>
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🍃</div>
-                    <h4>হরীতকী</h4>
-                    <p>পেট পরিষ্কার ও কোষ্ঠকাঠিন্য দূর করে</p>
-                </div>
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🌱</div>
-                    <h4>বহেড়া</h4>
-                    <p>লিভার ও পাকস্থলীর সুরক্ষায় কার্যকর</p>
-                </div>
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🫚</div>
-                    <h4>আদা</h4>
-                    <p>গ্যাস ও বমিভাব দূর করে</p>
-                </div>
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🌾</div>
-                    <h4>জিরা</h4>
-                    <p>হজম প্রক্রিয়া উন্নত করে</p>
-                </div>
-                <div class="ingredient-card">
-                    <div class="ingredient-icon">🍯</div>
-                    <h4>মধু</h4>
-                    <p>প্রাকৃতিক অ্যান্টিঅক্সিডেন্ট ও এনার্জি</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== HOW TO USE SECTION ========== -->
-    <section class="howto-section" id="howto">
-        <div class="container">
-            <div class="section-header">
-                <h2>ব্যবহারের নিয়ম</h2>
-                <p>সঠিক নিয়মে খেলে দ্রুত ফলাফল পাবেন</p>
-            </div>
-            <div class="howto-steps">
-                <div class="step-card">
-                    <div class="step-number">১</div>
-                    <h4>পরিমাণ</h4>
-                    <p>১ চা চামচ পাউডার নিন</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">২</div>
-                    <h4>মিশ্রণ</h4>
-                    <p>এক গ্লাস হালকা গরম পানিতে মেশান</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">৩</div>
-                    <h4>সময়</h4>
-                    <p>সকালে খালি পেটে ও রাতে খাবারের পর খান</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">৪</div>
-                    <h4>নিয়মিত</h4>
-                    <p>৩০ দিন নিয়মিত খান — ফলাফল অনুভব করুন</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== WHY CHOOSE US SECTION ========== -->
-    <section class="trust-section" id="trust">
-        <div class="container">
-            <div class="section-header">
-                <h2>কেন আমাদের বেছে নেবেন?</h2>
-                <p>আমরা বিশ্বাসযোগ্যতা ও মান নিশ্চিত করি</p>
-            </div>
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <div class="trust-icon"><i class="fas fa-certificate"></i></div>
-                    <h4>১০০% অরিজিনাল</h4>
-                    <p>সম্পূর্ণ আসল ও খাঁটি পণ্য</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <h4>ক্যাশ অন ডেলিভারি</h4>
-                    <p>পণ্য হাতে পেয়ে টাকা দিন</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon"><i class="fas fa-truck-fast"></i></div>
-                    <h4>সারা বাংলাদেশ ডেলিভারি</h4>
-                    <p>৬৪ জেলায় দ্রুত ডেলিভারি</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon"><i class="fas fa-box"></i></div>
-                    <h4>নিরাপদ প্যাকেজিং</h4>
-                    <p>প্রিমিয়াম ও সুরক্ষিত প্যাকেজিং</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== CUSTOMER REVIEWS SECTION ========== -->
-    <section class="reviews-section" id="reviews">
-        <div class="container">
-            <div class="section-header">
-                <h2>সন্তুষ্ট গ্রাহকদের মতামত</h2>
-                <p>যারা ব্যবহার করেছেন তাদের অভিজ্ঞতা</p>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
-                            <h5>রহিম উদ্দিন</h5>
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <!-- Hero Image -->
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand/20 to-purple-300/20 rounded-full blur-3xl scale-75"></div>
+                        <div class="relative animate-float">
+                            <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-brand-100 to-purple-100 flex items-center justify-center shadow-2xl">
+                                <div class="text-center">
+                                    <i class="fas fa-flask text-brand text-6xl md:text-8xl mb-2"></i>
+                                    <p class="text-brand-700 font-bold text-lg">ভিটাহার্ব প্লাস</p>
+                                    <p class="text-gray-500 text-sm">আয়ুর্বেদিক হেলথ টনিক</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="absolute top-4 right-4 bg-white shadow-lg rounded-full px-3 py-2 text-xs font-bold text-green-600 animate-bounce">
+                            <i class="fas fa-leaf mr-1"></i> ১০০% ন্যাচারাল
+                        </div>
+                        <div class="absolute bottom-8 left-0 bg-white shadow-lg rounded-full px-3 py-2 text-xs font-bold text-brand animate-bounce" style="animation-delay:0.5s">
+                            <i class="fas fa-award mr-1"></i> ISO সার্টিফাইড
                         </div>
                     </div>
-                    <p>"দীর্ঘদিন গ্যাস্ট্রিকের সমস্যায় ভুগছিলাম। গ্যাসটো কিলার খাওয়ার ২ সপ্তাহের মধ্যে অনেক উন্নতি অনুভব করছি। অসাধারণ পণ্য!"</p>
-                    <span class="review-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
-                            <h5>ফাতেমা বেগম</h5>
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        </div>
-                    </div>
-                    <p>"বুক জ্বালা আর বদহজমের সমস্যা ছিল। এখন নিয়মিত এটা খাচ্ছি, আলহামদুলিল্লাহ অনেক ভালো আছি। সবাইকে রেকমেন্ড করছি।"</p>
-                    <span class="review-location"><i class="fas fa-map-marker-alt"></i> চট্টগ্রাম</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
-                            <h5>আব্দুল করিম</h5>
-                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        </div>
-                    </div>
-                    <p>"লিভারের সমস্যা ছিল, ডাক্তার বলেছিলেন সাবধান থাকতে। এই টনিক খাওয়ার পর লিভার টেস্টে উন্নতি দেখাচ্ছে। জাযাকাল্লাহু খাইরান!"</p>
-                    <span class="review-location"><i class="fas fa-map-marker-alt"></i> রাজশাহী</span>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ========== VIDEO REVIEW SECTION ========== -->
-    <section class="video-section" id="video">
-        <div class="container">
-            <div class="section-header">
-                <h2>ভিডিও রিভিউ</h2>
-                <p>আমাদের গ্রাহকদের ভিডিও রিভিউ দেখুন</p>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-placeholder" id="videoPlaceholder">
-                    <i class="fas fa-play-circle"></i>
-                    <p>ভিডিও দেখতে ক্লিক করুন</p>
-                    <!-- Replace VIDEO_ID with actual YouTube video ID -->
-                    <iframe data-src="https://www.youtube.com/embed/VIDEO_ID" title="Customer Video Review" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== FAQ SECTION ========== -->
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>সচরাচর জিজ্ঞাসা</h2>
-                <p>আপনার প্রশ্নের উত্তর</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>এটি কতদিন খেতে হবে?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>সর্বনিম্ন ৩০ দিন নিয়মিত খেলে ভালো ফলাফল পাবেন। তবে সমস্যার তীব্রতা অনুযায়ী ২-৩ মাস খাওয়া উচিত।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>কোনো পার্শ্বপ্রতিক্রিয়া আছে?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>না, এটি ১০০% প্রাকৃতিক ভেষজ উপাদানে তৈরি। কোনো কেমিক্যাল বা ক্ষতিকর উপাদান নেই।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>ডেলিভারি কতদিনে পাবো?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>ঢাকার ভেতরে ১-২ দিন এবং ঢাকার বাইরে ২-৪ দিনের মধ্যে ডেলিভারি পাবেন।</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>গর্ভবতী মহিলারা কি খেতে পারবে?</h4>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>গর্ভবতী ও স্তন্যদানকারী মায়েদের ডাক্তারের পরামর্শ নিয়ে খাওয়া উচিত।</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ========== ORDER SECTION ========== -->
-    <section class="order-section" id="order">
-        <div class="container">
-            <div class="section-header">
-                <h2>এখনই অর্ডার করুন</h2>
-                <p>স্পেশাল ডিসকাউন্ট মূল্যে পেতে এখনই অর্ডার করুন</p>
-            </div>
-            <div class="order-wrapper">
-                <div class="order-product-info">
-                    <img src="assets/images/product.png" alt="গ্যাসটো কিলার লিভার টনিক" loading="lazy">
-                    <div class="order-price-info">
-                        <h3>গ্যাসটো কিলার লিভার টনিক</h3>
-                        <div class="price-box">
-                            <span class="old-price">৳ ১২০০</span>
-                            <span class="new-price">৳ ৮৫০</span>
+    <!-- ========== COUNTDOWN + STOCK ALERT ========== -->
+    <section class="bg-gradient-to-r from-gray-900 via-brand-900 to-gray-900 py-6">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Countdown Timer -->
+                <div class="text-center md:text-left">
+                    <p class="text-brand-200 text-sm font-medium mb-2"><i class="fas fa-clock mr-1"></i> অফার শেষ হচ্ছে:</p>
+                    <div class="flex gap-3" id="countdown">
+                        <div class="glass-dark rounded-lg px-4 py-2 text-center">
+                            <span class="text-2xl font-bold text-white block" id="hours">00</span>
+                            <span class="text-xs text-brand-200">ঘণ্টা</span>
                         </div>
-                        <p class="delivery-note"><i class="fas fa-truck"></i> ঢাকায় ডেলিভারি চার্জ ৳৬০ | ঢাকার বাইরে ৳১২০</p>
+                        <div class="glass-dark rounded-lg px-4 py-2 text-center">
+                            <span class="text-2xl font-bold text-white block" id="minutes">00</span>
+                            <span class="text-xs text-brand-200">মিনিট</span>
+                        </div>
+                        <div class="glass-dark rounded-lg px-4 py-2 text-center">
+                            <span class="text-2xl font-bold text-white block" id="seconds">00</span>
+                            <span class="text-xs text-brand-200">সেকেন্ড</span>
+                        </div>
                     </div>
                 </div>
-                <form class="order-form" id="orderForm">
-                    <div class="form-group">
-                        <label for="customerName"><i class="fas fa-user"></i> আপনার নাম</label>
-                        <input type="text" id="customerName" name="name" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                <!-- Stock Alert -->
+                <div class="flex items-center gap-3 bg-red-500/10 border border-red-500/30 rounded-full px-5 py-2.5 stock-pulse">
+                    <div class="w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                    <p class="text-red-300 text-sm font-semibold"><i class="fas fa-exclamation-triangle mr-1"></i> মাত্র <span class="text-white font-bold" id="stockCount">17</span> টি স্টকে আছে!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT BENEFITS SECTION ========== -->
+    <section class="py-16 md:py-24 bg-white" id="benefits">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-brand-50 text-brand-700 px-4 py-1 rounded-full text-sm font-semibold mb-3">উপকারিতা</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">কেন ভিটাহার্ব প্লাস ব্যবহার করবেন?</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">প্রাচীন আয়ুর্বেদিক জ্ঞান ও আধুনিক বিজ্ঞানের সমন্বয়ে তৈরি</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Benefit Card 1 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-virus text-brand text-xl"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="customerPhone"><i class="fas fa-phone"></i> মোবাইল নম্বর</label>
-                        <input type="tel" id="customerPhone" name="phone" placeholder="01XXXXXXXXX" required>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">শরীরের ইমিউন সিস্টেম শক্তিশালী করে রোগ প্রতিরোধ ক্ষমতা বাড়ায়</p>
+                </div>
+                <!-- Benefit Card 2 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt text-green-600 text-xl"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="customerAddress"><i class="fas fa-map-marker-alt"></i> সম্পূর্ণ ঠিকানা</label>
-                        <textarea id="customerAddress" name="address" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" required></textarea>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">শক্তি ও স্ট্যামিনা বৃদ্ধি</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">শারীরিক দুর্বলতা কমিয়ে এনার্জি লেভেল বাড়ায় প্রাকৃতিকভাবে</p>
+                </div>
+                <!-- Benefit Card 3 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-blue-600 text-xl"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="customerQty"><i class="fas fa-box"></i> পরিমাণ</label>
-                        <select id="customerQty" name="quantity">
-                            <option value="1">১ পিস - ৳৮৫০</option>
-                            <option value="2">২ পিস - ৳১৬০০ (সেভ ৳১০০)</option>
-                            <option value="3">৩ পিস - ৳২২৫০ (সেভ ৳৩০০)</option>
-                        </select>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">মানসিক স্বাস্থ্য উন্নতি</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">স্ট্রেস ও ক্লান্তি কমিয়ে মানসিক শান্তি প্রদান করে</p>
+                </div>
+                <!-- Benefit Card 4 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-fire text-orange-600 text-xl"></i>
                     </div>
-                    <button type="submit" class="btn-order">
-                        <i class="fas fa-shopping-cart"></i> অর্ডার কনফার্ম করুন
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">হজম শক্তি বৃদ্ধি</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">গ্যাস, অম্বল, বদহজম দূর করে হজম প্রক্রিয়া উন্নত করে</p>
+                </div>
+                <!-- Benefit Card 5 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-heart-pulse text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">রক্ত সঞ্চালন উন্নত</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">রক্তচাপ নিয়ন্ত্রণ ও রক্ত সঞ্চালন স্বাভাবিক রাখে</p>
+                </div>
+                <!-- Benefit Card 6 -->
+                <div class="reveal group bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-moon text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">ভালো ঘুম</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">অনিদ্রা দূর করে গভীর ও শান্তিপূর্ণ ঘুমে সাহায্য করে</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES & INGREDIENTS SECTION ========== -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-brand-50 via-purple-50 to-white" id="ingredients">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-brand-100 text-brand-700 px-4 py-1 rounded-full text-sm font-semibold mb-3">উপাদান</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">প্রাকৃতিক ভেষজ উপাদানসমূহ</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">সম্পূর্ণ হালাল ও নিরাপদ - কোনো কেমিক্যাল বা পার্শ্বপ্রতিক্রিয়া নেই</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🌿</div>
+                    <h4 class="font-bold text-gray-800 text-sm">আমলকী</h4>
+                    <p class="text-xs text-gray-500 mt-1">ভিটামিন সি সমৃদ্ধ</p>
+                </div>
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🍃</div>
+                    <h4 class="font-bold text-gray-800 text-sm">অশ্বগন্ধা</h4>
+                    <p class="text-xs text-gray-500 mt-1">শক্তি বর্ধক</p>
+                </div>
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🌱</div>
+                    <h4 class="font-bold text-gray-800 text-sm">তুলসী</h4>
+                    <p class="text-xs text-gray-500 mt-1">অ্যান্টিঅক্সিডেন্ট</p>
+                </div>
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🫚</div>
+                    <h4 class="font-bold text-gray-800 text-sm">আদা</h4>
+                    <p class="text-xs text-gray-500 mt-1">হজম সহায়ক</p>
+                </div>
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🍯</div>
+                    <h4 class="font-bold text-gray-800 text-sm">মধু</h4>
+                    <p class="text-xs text-gray-500 mt-1">প্রাকৃতিক এনার্জি</p>
+                </div>
+                <div class="reveal glass bg-white/60 rounded-2xl p-5 text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 border border-white/50">
+                    <div class="text-4xl mb-3">🌾</div>
+                    <h4 class="font-bold text-gray-800 text-sm">শতমূলী</h4>
+                    <p class="text-xs text-gray-500 mt-1">হরমোন ব্যালান্স</p>
+                </div>
+            </div>
+            <!-- Feature highlights -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                <div class="reveal flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">BSTI অনুমোদিত</span>
+                </div>
+                <div class="reveal flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                        <i class="fas fa-microscope text-blue-600"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">ল্যাব টেস্টেড</span>
+                </div>
+                <div class="reveal flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center shrink-0">
+                        <i class="fas fa-leaf text-brand"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">১০০% অর্গানিক</span>
+                </div>
+                <div class="reveal flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
+                        <i class="fas fa-certificate text-orange-600"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">GMP সার্টিফাইড</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CUSTOMER REVIEWS / TESTIMONIALS SLIDER ========== -->
+    <section class="py-16 md:py-24 bg-white" id="reviews">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-yellow-50 text-yellow-700 px-4 py-1 rounded-full text-sm font-semibold mb-3"><i class="fas fa-star mr-1"></i> রিভিউ</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">সন্তুষ্ট গ্রাহকদের মতামত</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">১০,০০০+ গ্রাহক ইতিমধ্যে উপকৃত হয়েছেন</p>
+            </div>
+            <!-- Slider -->
+            <div class="relative reveal">
+                <div class="slider-container" id="testimonialSlider">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Slide 1 -->
+                        <div class="slider-slide">
+                            <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-6 mx-2 h-full shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand to-brand-700 flex items-center justify-center text-white font-bold">র</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-900">রহিম উদ্দিন</h5>
+                                        <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed italic">"২ মাস ধরে ব্যবহার করছি। শরীরে অনেক এনার্জি অনুভব করছি। আগে খুব দুর্বল লাগতো, এখন সারাদিন কাজ করতে পারি। অসাধারণ পণ্য!"</p>
+                                <p class="text-brand text-xs font-semibold mt-3"><i class="fas fa-map-marker-alt mr-1"></i> ঢাকা, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slider-slide">
+                            <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-6 mx-2 h-full shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white font-bold">ফ</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-900">ফাতেমা আক্তার</h5>
+                                        <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed italic">"আমার হজমের সমস্যা ছিল অনেকদিন ধরে। এই টনিক খাওয়ার পর থেকে গ্যাস, বদহজম প্রায় নেই বললেই চলে। আলহামদুলিল্লাহ।"</p>
+                                <p class="text-brand text-xs font-semibold mt-3"><i class="fas fa-map-marker-alt mr-1"></i> চট্টগ্রাম, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slider-slide">
+                            <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-6 mx-2 h-full shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold">ক</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-900">করিম সাহেব</h5>
+                                        <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed italic">"বয়স ৫৫ বছর। নিয়মিত এই টনিক খাচ্ছি ৩ মাস ধরে। ব্লাড প্রেশার নিয়ন্ত্রণে আছে, ঘুমও ভালো হচ্ছে। সবাইকে রেকমেন্ড করি।"</p>
+                                <p class="text-brand text-xs font-semibold mt-3"><i class="fas fa-map-marker-alt mr-1"></i> রাজশাহী, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="slider-slide">
+                            <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-6 mx-2 h-full shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-white font-bold">ন</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-900">নাজমুল হাসান</h5>
+                                        <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed italic">"অফিসের কাজে অনেক প্রেশার থাকে। ভিটাহার্ব প্লাস খাওয়ার পর মানসিক চাপ অনেক কমেছে। রাতে ভালো ঘুম হচ্ছে।"</p>
+                                <p class="text-brand text-xs font-semibold mt-3"><i class="fas fa-map-marker-alt mr-1"></i> সিলেট, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="slider-slide">
+                            <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-6 mx-2 h-full shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-bold">স</div>
+                                    <div>
+                                        <h5 class="font-bold text-gray-900">সাবিনা ইয়াসমিন</h5>
+                                        <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed italic">"চুল পড়া ও ত্বকের সমস্যায় ভুগছিলাম। ভিটাহার্ব প্লাস খাওয়ার পর ত্বক উজ্জ্বল হয়েছে, চুল পড়াও কমেছে অনেক!"</p>
+                                <p class="text-brand text-xs font-semibold mt-3"><i class="fas fa-map-marker-alt mr-1"></i> খুলনা, বাংলাদেশ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider Controls -->
+                <div class="flex justify-center gap-3 mt-6">
+                    <button onclick="slideTestimonial(-1)" class="w-10 h-10 rounded-full bg-brand/10 hover:bg-brand hover:text-white text-brand flex items-center justify-center transition-all">
+                        <i class="fas fa-chevron-left"></i>
                     </button>
-                </form>
+                    <button onclick="slideTestimonial(1)" class="w-10 h-10 rounded-full bg-brand/10 hover:bg-brand hover:text-white text-brand flex items-center justify-center transition-all">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3><i class="fas fa-leaf"></i> গ্যাসটো কিলার</h3>
-                    <p>প্রাকৃতিক ভেষজ উপাদানে তৈরি প্রিমিয়াম লিভার টনিক</p>
+    <!-- ========== BEFORE & AFTER RESULTS SECTION ========== -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white" id="results">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-green-50 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-3"><i class="fas fa-chart-line mr-1"></i> ফলাফল</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">ব্যবহারের আগে ও পরে</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">আমাদের গ্রাহকদের বাস্তব অভিজ্ঞতা ও পরিবর্তন</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Result Card 1 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="grid grid-cols-2">
+                        <div class="bg-red-50 p-4 text-center border-r border-gray-100">
+                            <i class="fas fa-tired text-red-400 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-red-600">আগে</p>
+                        </div>
+                        <div class="bg-green-50 p-4 text-center">
+                            <i class="fas fa-smile-beam text-green-500 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-green-600">পরে</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-gray-900 mb-2">শারীরিক দুর্বলতা দূর</h4>
+                        <p class="text-sm text-gray-500">২-৩ সপ্তাহ ব্যবহারে শরীরে শক্তি ও এনার্জি অনুভব করুন</p>
+                        <div class="mt-3 flex items-center gap-2">
+                            <div class="h-2 rounded-full bg-gray-200 flex-1">
+                                <div class="h-2 rounded-full bg-gradient-to-r from-brand to-green-500 w-[85%]"></div>
+                            </div>
+                            <span class="text-xs font-bold text-brand">৮৫%</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="#home">হোম</a>
-                    <a href="#benefits">উপকারিতা</a>
-                    <a href="#reviews">রিভিউ</a>
-                    <a href="#order">অর্ডার</a>
+                <!-- Result Card 2 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="grid grid-cols-2">
+                        <div class="bg-red-50 p-4 text-center border-r border-gray-100">
+                            <i class="fas fa-bed text-red-400 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-red-600">আগে</p>
+                        </div>
+                        <div class="bg-green-50 p-4 text-center">
+                            <i class="fas fa-running text-green-500 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-green-600">পরে</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-gray-900 mb-2">ঘুমের সমস্যা সমাধান</h4>
+                        <p class="text-sm text-gray-500">১-২ সপ্তাহে গভীর ও শান্তিপূর্ণ ঘুমের অভিজ্ঞতা</p>
+                        <div class="mt-3 flex items-center gap-2">
+                            <div class="h-2 rounded-full bg-gray-200 flex-1">
+                                <div class="h-2 rounded-full bg-gradient-to-r from-brand to-green-500 w-[90%]"></div>
+                            </div>
+                            <span class="text-xs font-bold text-brand">৯০%</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-contact">
-                    <p><i class="fas fa-phone"></i> +880 1XXXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> info@gastokiller.com</p>
+                <!-- Result Card 3 -->
+                <div class="reveal bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="grid grid-cols-2">
+                        <div class="bg-red-50 p-4 text-center border-r border-gray-100">
+                            <i class="fas fa-weight-scale text-red-400 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-red-600">আগে</p>
+                        </div>
+                        <div class="bg-green-50 p-4 text-center">
+                            <i class="fas fa-heart text-green-500 text-3xl mb-2"></i>
+                            <p class="text-xs font-semibold text-green-600">পরে</p>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-gray-900 mb-2">হজম সমস্যা সমাধান</h4>
+                        <p class="text-sm text-gray-500">১ মাসে গ্যাস, অম্বল, বদহজম থেকে স্থায়ী মুক্তি</p>
+                        <div class="mt-3 flex items-center gap-2">
+                            <div class="h-2 rounded-full bg-gray-200 flex-1">
+                                <div class="h-2 rounded-full bg-gradient-to-r from-brand to-green-500 w-[92%]"></div>
+                            </div>
+                            <span class="text-xs font-bold text-brand">৯২%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; ২০২৬ গ্যাসটো কিলার। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE THIS PRODUCT SECTION ========== -->
+    <section class="py-16 md:py-24 bg-white" id="why-us">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-brand-50 text-brand-700 px-4 py-1 rounded-full text-sm font-semibold mb-3">কেন আমরা?</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">কেন ভিটাহার্ব প্লাস বেছে নেবেন?</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">আমরা মান ও বিশ্বস্ততায় অতুলনীয়</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="reveal text-center group">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-award text-brand text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">১০০% অরিজিনাল</h4>
+                    <p class="text-sm text-gray-500">সম্পূর্ণ খাঁটি ও আসল পণ্যের নিশ্চয়তা</p>
+                </div>
+                <div class="reveal text-center group">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-truck-fast text-green-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">দ্রুত ডেলিভারি</h4>
+                    <p class="text-sm text-gray-500">সারা বাংলাদেশে ১-৩ দিনে ডেলিভারি</p>
+                </div>
+                <div class="reveal text-center group">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-money-bill-wave text-blue-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">ক্যাশ অন ডেলিভারি</h4>
+                    <p class="text-sm text-gray-500">পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন</p>
+                </div>
+                <div class="reveal text-center group">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-headset text-orange-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">২৪/৭ সাপোর্ট</h4>
+                    <p class="text-sm text-gray-500">যেকোনো সময় আমাদের সাথে যোগাযোগ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ACCORDION SECTION ========== -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-brand-50/50 to-purple-50/50" id="faq">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-14 reveal">
+                <span class="inline-block bg-brand-100 text-brand-700 px-4 py-1 rounded-full text-sm font-semibold mb-3"><i class="fas fa-question-circle mr-1"></i> প্রশ্নোত্তর</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">সচরাচর জিজ্ঞাসা (FAQ)</h2>
+                <p class="text-gray-500">আপনার সকল প্রশ্নের উত্তর এখানে পাবেন</p>
+            </div>
+            <div class="space-y-3">
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">ভিটাহার্ব প্লাস কতদিন খেতে হবে?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">সর্বনিম্ন ৩০ দিন নিয়মিত খেলে ভালো ফলাফল পাবেন। তবে সর্বোত্তম ফলাফলের জন্য ২-৩ মাস নিয়মিত সেবন করার পরামর্শ দেওয়া হয়। এটি দীর্ঘমেয়াদে খাওয়া সম্পূর্ণ নিরাপদ।</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">কোনো পার্শ্বপ্রতিক্রিয়া আছে কি?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">না, এটি ১০০% প্রাকৃতিক আয়ুর্বেদিক ভেষজ উপাদানে তৈরি। কোনো কেমিক্যাল, স্টেরয়েড বা ক্ষতিকর উপাদান নেই। তাই কোনো পার্শ্বপ্রতিক্রিয়া নেই।</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">ডেলিভারি কতদিনে পাবো?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">ঢাকার ভেতরে ১-২ কর্মদিবস এবং ঢাকার বাইরে ২-৪ কর্মদিবসের মধ্যে ডেলিভারি পাবেন। অর্ডার কনফার্মেশনের পর ট্র্যাকিং নম্বর পাবেন।</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">পেমেন্ট কিভাবে করবো?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">ক্যাশ অন ডেলিভারি (COD), বিকাশ এবং নগদ - তিনটি পদ্ধতিতে পেমেন্ট করতে পারবেন। পণ্য হাতে পেয়ে মূল্য পরিশোধ করতে পারবেন।</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">গর্ভবতী মহিলারা কি খেতে পারবেন?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">গর্ভবতী ও স্তন্যদানকারী মায়েদের ডাক্তারের পরামর্শ নিয়ে খাওয়া উচিত। ১৮ বছরের নিচে শিশুদের জন্য প্রযোজ্য নয়।</p>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item reveal bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900 pr-4">রিটার্ন পলিসি আছে কি?</span>
+                        <i class="fas fa-chevron-down faq-icon text-brand transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-5 pb-5">
+                        <p class="text-gray-600 text-sm leading-relaxed">হ্যাঁ, পণ্য ডেলিভারির ৭ দিনের মধ্যে যদি কোনো সমস্যা থাকে তাহলে রিটার্ন বা এক্সচেঞ্জ করতে পারবেন। অবশ্যই প্যাকেট অক্ষত অবস্থায় থাকতে হবে।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STICKY CTA SECTION (Desktop) ========== -->
+    <section class="py-12 bg-gradient-to-r from-brand-700 via-brand to-brand-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">এখনই অর্ডার করুন - বিশেষ ছাড়ে!</h2>
+            <p class="text-brand-100 mb-6">সীমিত সময়ের অফার! স্টক শেষ হওয়ার আগেই অর্ডার করুন</p>
+            <button onclick="openOrderModal()" class="cta-btn bg-white text-brand-700 px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-gray-50 animate-wiggle">
+                <i class="fas fa-shopping-cart mr-2"></i> অর্ডার করুন - মাত্র ৳৮৯৯
+            </button>
+            <div class="flex items-center justify-center gap-6 mt-5 text-sm text-brand-100">
+                <span><i class="fas fa-truck mr-1"></i> ফ্রি ডেলিভারি</span>
+                <span><i class="fas fa-undo mr-1"></i> ৭ দিন রিটার্ন</span>
+                <span><i class="fas fa-lock mr-1"></i> নিরাপদ পেমেন্ট</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand to-brand-700 flex items-center justify-center">
+                            <i class="fas fa-leaf text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">ভিটা<span class="text-brand">হার্ব</span> প্লাস</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-4 max-w-md">প্রাকৃতিক আয়ুর্বেদিক ভেষজ উপাদানে তৈরি প্রিমিয়াম হেলথ টনিক। আমরা আপনার সুস্বাস্থ্যের জন্য নিবেদিত।</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-brand flex items-center justify-center transition-all text-sm"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-brand flex items-center justify-center transition-all text-sm"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-brand flex items-center justify-center transition-all text-sm"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-brand flex items-center justify-center transition-all text-sm"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">দ্রুত লিংক</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-brand transition">হোম</a></li>
+                        <li><a href="#benefits" class="hover:text-brand transition">উপকারিতা</a></li>
+                        <li><a href="#ingredients" class="hover:text-brand transition">উপাদান</a></li>
+                        <li><a href="#reviews" class="hover:text-brand transition">রিভিউ</a></li>
+                        <li><a href="#faq" class="hover:text-brand transition">প্রশ্নোত্তর</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">যোগাযোগ</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2"><i class="fas fa-phone text-brand"></i> +880 1XXXXXXXXX</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-envelope text-brand"></i> info@vitaherb.com</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-brand"></i> ঢাকা, বাংলাদেশ</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-clock text-brand"></i> সকাল ৯টা - রাত ১০টা</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; ২০২৫ ভিটাহার্ব প্লাস। সর্বস্বত্ব সংরক্ষিত।</p>
+                <div class="flex items-center gap-4">
+                    <span>প্রাইভেসি পলিসি</span>
+                    <span>শর্তাবলী</span>
+                    <span>রিফান্ড পলিসি</span>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ========== STICKY MOBILE CTA ========== -->
-    <div class="sticky-mobile-cta">
-        <a href="#order" class="btn-sticky">
-            <i class="fas fa-shopping-cart"></i> এখনই অর্ডার করুন — ৳৮৫০
-        </a>
+    <!-- ========== STICKY MOBILE ORDER BUTTON ========== -->
+    <div class="sticky-mobile">
+        <button onclick="openOrderModal()" class="w-full cta-btn animate-pulse-glow bg-gradient-to-r from-brand to-brand-700 text-white py-3.5 rounded-full font-bold text-base shadow-lg shadow-brand/30 flex items-center justify-center gap-2">
+            <i class="fas fa-shopping-cart"></i> এখনই অর্ডার করুন - ৳৮৯৯
+        </button>
     </div>
 
-    <!-- ========== FLOATING WHATSAPP ========== -->
-    <a href="https://wa.me/880XXXXXXXXXX" target="_blank" class="whatsapp-float">
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/8801XXXXXXXXX" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Chat">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ========== SUCCESS MODAL ========== -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal-content">
-            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>অর্ডার সফল হয়েছে!</h3>
-            <p>আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। শীঘ্রই আমরা আপনার সাথে যোগাযোগ করবো।</p>
-            <button class="btn-modal-close" onclick="closeModal()">ঠিক আছে</button>
+    <!-- ========== ORDER MODAL POPUP ========== -->
+    <div class="modal-overlay fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60" id="orderModal">
+        <div class="modal-content bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-gradient-to-r from-brand to-brand-700 p-5 rounded-t-3xl z-10">
+                <button onclick="closeOrderModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="text-white text-center">
+                    <h3 class="text-xl font-bold mb-1"><i class="fas fa-shopping-bag mr-2"></i>অর্ডার ফর্ম</h3>
+                    <p class="text-brand-100 text-sm">নিচের ফর্মটি পূরণ করে অর্ডার কনফার্ম করুন</p>
+                </div>
+            </div>
+            <!-- Modal Body / Order Form -->
+            <form id="orderForm" class="p-6 space-y-4">
+                <!-- Product Info -->
+                <div class="bg-brand-50 rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center shrink-0">
+                        <i class="fas fa-flask text-brand text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm">ভিটাহার্ব প্লাস - আয়ুর্বেদিক হেলথ টনিক</h4>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-gray-400 line-through text-sm">৳১৫০০</span>
+                            <span class="text-brand font-bold text-lg">৳৮৯৯</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quantity Selector -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-box text-brand mr-1"></i> পরিমাণ নির্বাচন</label>
+                    <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-3">
+                        <button type="button" onclick="changeQty(-1)" class="qty-btn"><i class="fas fa-minus text-xs"></i></button>
+                        <input type="text" id="qtyInput" value="1" readonly class="qty-input">
+                        <button type="button" onclick="changeQty(1)" class="qty-btn"><i class="fas fa-plus text-xs"></i></button>
+                        <span class="ml-auto text-sm font-bold text-brand" id="totalPrice">৳৮৯৯</span>
+                    </div>
+                </div>
+
+                <!-- Size/Pack Option -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-cubes text-brand mr-1"></i> প্যাক সাইজ</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="packSize" value="small" class="peer sr-only" checked>
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all">
+                                <p class="font-bold text-sm text-gray-900">৫০ গ্রাম</p>
+                                <p class="text-xs text-gray-500">১৫ দিন</p>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="packSize" value="medium" class="peer sr-only">
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all">
+                                <p class="font-bold text-sm text-gray-900">১০০ গ্রাম</p>
+                                <p class="text-xs text-gray-500">৩০ দিন</p>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="packSize" value="large" class="peer sr-only">
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all relative">
+                                <div class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">বেস্ট</div>
+                                <p class="font-bold text-sm text-gray-900">২০০ গ্রাম</p>
+                                <p class="text-xs text-gray-500">৬০ দিন</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Customer Name -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-user text-brand mr-1"></i> আপনার নাম <span class="text-red-500">*</span></label>
+                    <input type="text" id="custName" name="name" placeholder="আপনার পূর্ণ নাম লিখুন" required
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all text-sm font-bangla">
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-phone text-brand mr-1"></i> মোবাইল নম্বর <span class="text-red-500">*</span></label>
+                    <input type="tel" id="custPhone" name="phone" placeholder="01XXXXXXXXX" required
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all text-sm font-bangla">
+                </div>
+
+                <!-- Full Address -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-map-marker-alt text-brand mr-1"></i> সম্পূর্ণ ঠিকানা <span class="text-red-500">*</span></label>
+                    <textarea id="custAddress" name="address" rows="3" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন (এলাকা, থানা, জেলা)" required
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/20 outline-none transition-all text-sm font-bangla resize-none"></textarea>
+                </div>
+
+                <!-- Payment Method -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-credit-card text-brand mr-1"></i> পেমেন্ট মেথড</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="payment" value="cod" class="peer sr-only" checked>
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all">
+                                <i class="fas fa-hand-holding-dollar text-lg text-gray-600 peer-checked:text-brand mb-1 block"></i>
+                                <p class="text-xs font-semibold text-gray-700">ক্যাশ অন ডেলিভারি</p>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="payment" value="bkash" class="peer sr-only">
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all">
+                                <i class="fas fa-mobile-screen text-lg text-pink-600 mb-1 block"></i>
+                                <p class="text-xs font-semibold text-gray-700">বিকাশ</p>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="payment" value="nagad" class="peer sr-only">
+                            <div class="peer-checked:border-brand peer-checked:bg-brand-50 border-2 border-gray-200 rounded-xl p-3 text-center transition-all">
+                                <i class="fas fa-wallet text-lg text-orange-600 mb-1 block"></i>
+                                <p class="text-xs font-semibold text-gray-700">নগদ</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn" class="w-full cta-btn bg-gradient-to-r from-brand to-brand-700 text-white py-4 rounded-xl font-bold text-base shadow-lg shadow-brand/30 flex items-center justify-center gap-2 mt-4">
+                    <i class="fas fa-check-circle"></i> অর্ডার কনফার্ম করুন
+                </button>
+                <p class="text-center text-xs text-gray-400 mt-2"><i class="fas fa-lock mr-1"></i> আপনার তথ্য সম্পূর্ণ নিরাপদ</p>
+            </form>
         </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <!-- ========== SUCCESS MODAL ========== -->
+    <div class="modal-overlay fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/60" id="successModal">
+        <div class="modal-content bg-white rounded-3xl w-full max-w-sm p-8 text-center shadow-2xl">
+            <div class="w-20 h-20 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-5">
+                <i class="fas fa-check-circle text-green-500 text-4xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">অর্ডার সফল হয়েছে!</h3>
+            <p class="text-gray-500 text-sm mb-6 leading-relaxed">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। শীঘ্রই আমাদের টিম আপনার সাথে যোগাযোগ করবে।</p>
+            <button onclick="closeSuccessModal()" class="cta-btn bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg">
+                <i class="fas fa-thumbs-up mr-1"></i> ধন্যবাদ
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+    /* ========================================
+       VitaHerb Plus - Landing Page JavaScript
+       ======================================== */
+
+    // ===== CONFIGURATION =====
+    const CONFIG = {
+        // Google Forms Action URL (replace with your actual form URL)
+        GOOGLE_FORM_URL: 'YOUR_GOOGLE_FORM_ACTION_URL',
+        // Google Form field entry IDs (replace with your actual entry IDs)
+        FORM_FIELDS: {
+            productName: 'entry.XXXXXXX1',
+            quantity: 'entry.XXXXXXX2',
+            packSize: 'entry.XXXXXXX3',
+            customerName: 'entry.XXXXXXX4',
+            phone: 'entry.XXXXXXX5',
+            address: 'entry.XXXXXXX6',
+            payment: 'entry.XXXXXXX7'
+        },
+        // Telegram Bot Configuration
+        TELEGRAM_BOT_TOKEN: 'YOUR_TELEGRAM_BOT_TOKEN',
+        TELEGRAM_CHAT_ID: 'YOUR_TELEGRAM_CHAT_ID',
+        // Product price
+        UNIT_PRICE: 899
+    };
+
+    // ===== COUNTDOWN TIMER =====
+    function initCountdown() {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 0);
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = endOfDay - now;
+            if (diff <= 0) {
+                endOfDay.setDate(endOfDay.getDate() + 1);
+                return;
+            }
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+
+    // ===== STOCK COUNTER (simulated) =====
+    function initStockCounter() {
+        const stockEl = document.getElementById('stockCount');
+        // Randomly decrease stock every 30-90 seconds for urgency
+        setInterval(() => {
+            let current = parseInt(stockEl.textContent);
+            if (current > 3) {
+                stockEl.textContent = current - 1;
+            }
+        }, Math.random() * 60000 + 30000);
+    }
+
+    // ===== TESTIMONIAL SLIDER =====
+    let currentSlide = 0;
+    let slidesPerView = 1;
+
+    function initSlider() {
+        updateSlidesPerView();
+        window.addEventListener('resize', updateSlidesPerView);
+        // Auto-slide every 4 seconds
+        setInterval(() => slideTestimonial(1), 4000);
+    }
+
+    function updateSlidesPerView() {
+        if (window.innerWidth >= 1024) slidesPerView = 3;
+        else if (window.innerWidth >= 768) slidesPerView = 2;
+        else slidesPerView = 1;
+        moveSlider();
+    }
+
+    function slideTestimonial(direction) {
+        const track = document.getElementById('sliderTrack');
+        const totalSlides = track.children.length;
+        const maxSlide = totalSlides - slidesPerView;
+        currentSlide += direction;
+        if (currentSlide > maxSlide) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = maxSlide;
+        moveSlider();
+    }
+
+    function moveSlider() {
+        const track = document.getElementById('sliderTrack');
+        const slideWidth = 100 / slidesPerView;
+        track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    }
+
+    // ===== FAQ ACCORDION =====
+    function toggleFAQ(btn) {
+        const item = btn.closest('.faq-item');
+        const allItems = document.querySelectorAll('.faq-item');
+        allItems.forEach(el => {
+            if (el !== item) el.classList.remove('active');
+        });
+        item.classList.toggle('active');
+    }
+
+    // ===== MODAL FUNCTIONS =====
+    function openOrderModal() {
+        document.getElementById('orderModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeOrderModal() {
+        document.getElementById('orderModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function closeSuccessModal() {
+        document.getElementById('successModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('orderModal').addEventListener('click', function(e) {
+        if (e.target === this) closeOrderModal();
+    });
+    document.getElementById('successModal').addEventListener('click', function(e) {
+        if (e.target === this) closeSuccessModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeOrderModal();
+            closeSuccessModal();
+        }
+    });
+
+    // ===== QUANTITY SELECTOR =====
+    function changeQty(delta) {
+        const input = document.getElementById('qtyInput');
+        let val = parseInt(input.value) + delta;
+        if (val < 1) val = 1;
+        if (val > 10) val = 10;
+        input.value = val;
+        updateTotalPrice();
+    }
+
+    function updateTotalPrice() {
+        const qty = parseInt(document.getElementById('qtyInput').value);
+        const total = qty * CONFIG.UNIT_PRICE;
+        document.getElementById('totalPrice').textContent = '\u09F3' + total;
+    }
+
+    // ===== FORM VALIDATION =====
+    function validateOrderForm(data) {
+        const errors = [];
+        if (!data.name || data.name.trim().length < 3) {
+            errors.push('অনুগ্রহ করে আপনার পূর্ণ নাম লিখুন (কমপক্ষে ৩ অক্ষর)');
+        }
+        const phoneRegex = /^01[3-9]\d{8}$/;
+        if (!phoneRegex.test(data.phone.replace(/[\s-]/g, ''))) {
+            errors.push('সঠিক মোবাইল নম্বর দিন (01XXXXXXXXX)');
+        }
+        if (!data.address || data.address.trim().length < 10) {
+            errors.push('অনুগ্রহ করে সম্পূর্ণ ঠিকানা লিখুন (কমপক্ষে ১০ অক্ষর)');
+        }
+        return errors;
+    }
+
+    // ===== SUBMIT TO GOOGLE FORMS =====
+    async function submitToGoogleForms(data) {
+        try {
+            const formData = new FormData();
+            formData.append(CONFIG.FORM_FIELDS.productName, 'ভিটাহার্ব প্লাস - আয়ুর্বেদিক হেলথ টনিক');
+            formData.append(CONFIG.FORM_FIELDS.quantity, data.quantity);
+            formData.append(CONFIG.FORM_FIELDS.packSize, data.packSize);
+            formData.append(CONFIG.FORM_FIELDS.customerName, data.name);
+            formData.append(CONFIG.FORM_FIELDS.phone, data.phone);
+            formData.append(CONFIG.FORM_FIELDS.address, data.address);
+            formData.append(CONFIG.FORM_FIELDS.payment, data.payment);
+
+            await fetch(CONFIG.GOOGLE_FORM_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            });
+            return true;
+        } catch (error) {
+            console.error('Google Forms submission error:', error);
+            return false;
+        }
+    }
+
+    // ===== SEND TELEGRAM NOTIFICATION =====
+    async function sendTelegramNotification(data) {
+        const paymentLabels = { cod: 'ক্যাশ অন ডেলিভারি', bkash: 'বিকাশ', nagad: 'নগদ' };
+        const packLabels = { small: '৫০ গ্রাম (১৫ দিন)', medium: '১০০ গ্রাম (৩০ দিন)', large: '২০০ গ্রাম (৬০ দিন)' };
+        const now = new Date().toLocaleString('bn-BD', { timeZone: 'Asia/Dhaka', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+        const message = `
+🛒 *নতুন অর্ডার পেয়েছেন!*
+━━━━━━━━━━━━━━━
+📦 *পণ্য:* ভিটাহার্ব প্লাস
+📏 *প্যাক:* ${packLabels[data.packSize] || data.packSize}
+🔢 *পরিমাণ:* ${data.quantity} পিস
+💰 *মোট:* ৳${data.quantity * CONFIG.UNIT_PRICE}
+━━━━━━━━━━━━━━━
+👤 *নাম:* ${data.name}
+📞 *ফোন:* ${data.phone}
+📍 *ঠিকানা:* ${data.address}
+💳 *পেমেন্ট:* ${paymentLabels[data.payment] || data.payment}
+🕒 *সময়:* ${now}
+━━━━━━━━━━━━━━━`;
+
+        try {
+            const url = `https://api.telegram.org/bot${CONFIG.TELEGRAM_BOT_TOKEN}/sendMessage`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: CONFIG.TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            });
+            const result = await response.json();
+            return result.ok;
+        } catch (error) {
+            console.error('Telegram notification error:', error);
+            return false;
+        }
+    }
+
+    // ===== ORDER FORM SUBMISSION =====
+    function initOrderForm() {
+        const form = document.getElementById('orderForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const originalHTML = submitBtn.innerHTML;
+
+            // Gather form data
+            const formData = {
+                name: document.getElementById('custName').value.trim(),
+                phone: document.getElementById('custPhone').value.trim(),
+                address: document.getElementById('custAddress').value.trim(),
+                quantity: document.getElementById('qtyInput').value,
+                packSize: document.querySelector('input[name="packSize"]:checked').value,
+                payment: document.querySelector('input[name="payment"]:checked').value
+            };
+
+            // Validate
+            const errors = validateOrderForm(formData);
+            if (errors.length > 0) {
+                alert(errors.join('\n'));
+                return;
+            }
+
+            // Show loading
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> অপেক্ষা করুন...';
+            submitBtn.disabled = true;
+
+            try {
+                // Submit to Google Forms and Telegram simultaneously
+                await Promise.all([
+                    submitToGoogleForms(formData),
+                    sendTelegramNotification(formData)
+                ]);
+
+                // Close order modal, show success
+                closeOrderModal();
+                setTimeout(() => {
+                    document.getElementById('successModal').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 300);
+
+                // Reset form
+                form.reset();
+                document.getElementById('qtyInput').value = '1';
+                updateTotalPrice();
+            } catch (error) {
+                console.error('Order submission error:', error);
+                // Still show success as data might have been saved
+                closeOrderModal();
+                setTimeout(() => {
+                    document.getElementById('successModal').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 300);
+                form.reset();
+            } finally {
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // ===== SCROLL REVEAL ANIMATION =====
+    function initScrollReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+    }
+
+    // ===== SMOOTH SCROLL =====
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                }
+            });
+        });
+    }
+
+    // ===== HEADER SCROLL EFFECT =====
+    function initHeaderScroll() {
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    }
+
+    // ===== INITIALIZE ALL =====
+    document.addEventListener('DOMContentLoaded', function() {
+        initCountdown();
+        initStockCounter();
+        initSlider();
+        initOrderForm();
+        initScrollReveal();
+        initSmoothScroll();
+        initHeaderScroll();
+    });
+    </script>
 </body>
 </html>
